@@ -25,7 +25,7 @@
    </requires>
 
    <plugin
-         id="ch.netcetera.eclipse.copyaspath"
+         id="ch.netcetera.eclipse.copyaspath.plugin"
          download-size="0"
          install-size="0"
          version="0.0.0"
