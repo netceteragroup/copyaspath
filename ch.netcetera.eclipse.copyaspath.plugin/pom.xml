@@ -10,5 +10,4 @@
   <groupId>ch.netcetera.eclipse.copyaspath</groupId>
   <artifactId>ch.netcetera.eclipse.copyaspath.plugin</artifactId>
   <packaging>eclipse-plugin</packaging>
-  <version>1.0.0</version>
 </project>
