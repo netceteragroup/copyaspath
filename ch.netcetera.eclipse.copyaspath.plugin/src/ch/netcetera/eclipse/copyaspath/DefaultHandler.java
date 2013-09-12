@@ -11,6 +11,7 @@
  * - Netcetera AG: initial implementation
  */
 package ch.netcetera.eclipse.copyaspath;
+
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
@@ -25,40 +26,41 @@ import org.eclipse.swt.dnd.Transfer;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.handlers.HandlerUtil;
 
-
+/**
+ * Handles all calls to "Copy as Path".
+ */
 public class DefaultHandler extends AbstractHandler {
 
-	@Override
-	public Object execute(ExecutionEvent event) throws ExecutionException {
-		IResource res= null;
-		ISelection currentSelection = HandlerUtil.getCurrentSelection(event);
-		IAdaptable firstElement= null;
-		if (currentSelection instanceof IStructuredSelection) {
-			IStructuredSelection ssel = (IStructuredSelection) currentSelection;
-			firstElement = (IAdaptable) ssel.getFirstElement();
-		}
-		if (firstElement != null) {
-			res= (IResource) firstElement.getAdapter(IResource.class);
-		} 
-		
-		if (res == null) {
-			IEditorInput activeEditorInput = HandlerUtil.getActiveEditorInput(event);
-			if (activeEditorInput != null) {
-				res= (IResource) activeEditorInput.getAdapter(IResource.class);
-			}
-		}
-		
-		String path= null;
-		
-		if (res != null) {
-			path= res.getLocation().toOSString();
-		} else if (firstElement instanceof IJavaElement) {
-			path= ((IJavaElement) firstElement).getPath().toOSString();
-		}
-		Clipboard clipboard = new Clipboard(HandlerUtil.getActiveShell(event).getDisplay());
-		clipboard.setContents(new Object[] { path },
-				new Transfer[] { TextTransfer.getInstance() });
-		clipboard.dispose();
-		return null;
-	}
+  @Override
+  public Object execute(ExecutionEvent event) throws ExecutionException {
+    IResource res = null;
+    ISelection currentSelection = HandlerUtil.getCurrentSelection(event);
+    IAdaptable firstElement = null;
+    if (currentSelection instanceof IStructuredSelection) {
+      IStructuredSelection ssel = (IStructuredSelection) currentSelection;
+      firstElement = (IAdaptable) ssel.getFirstElement();
+    }
+    if (firstElement != null) {
+      res = (IResource) firstElement.getAdapter(IResource.class);
+    }
+
+    if (res == null) {
+      IEditorInput activeEditorInput = HandlerUtil.getActiveEditorInput(event);
+      if (activeEditorInput != null) {
+        res = (IResource) activeEditorInput.getAdapter(IResource.class);
+      }
+    }
+
+    String path = null;
+
+    if (res != null) {
+      path = res.getLocation().toOSString();
+    } else if (firstElement instanceof IJavaElement) {
+      path = ((IJavaElement) firstElement).getPath().toOSString();
+    }
+    Clipboard clipboard = new Clipboard(HandlerUtil.getActiveShell(event).getDisplay());
+    clipboard.setContents(new Object[]{path}, new Transfer[]{TextTransfer.getInstance()});
+    clipboard.dispose();
+    return null;
+  }
 }
