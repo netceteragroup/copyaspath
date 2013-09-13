@@ -17,7 +17,7 @@
             locationURI="popup:org.eclipse.ui.popup.any?before=additions">
          <command
                commandId="ch.netcetera.eclipse.copyaspath"
-               label="Copy As Path">
+               label="Copy as Path">
                <visibleWhen
                      checkEnabled="false">
                </visibleWhen>

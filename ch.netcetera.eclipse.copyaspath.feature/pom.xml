@@ -10,4 +10,5 @@
   <groupId>ch.netcetera.eclipse.copyaspath</groupId>
   <artifactId>ch.netcetera.eclipse.copyaspath.feature</artifactId>
   <packaging>eclipse-feature</packaging>
+  <version>1.0.1-SNAPSHOT</version>
 </project>
