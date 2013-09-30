@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/ch.netcetera.eclipse.copyaspath.feature_1.0.2.jar" id="ch.netcetera.eclipse.copyaspath.feature" version="1.0.2"/>
+   <feature url="features/ch.netcetera.eclipse.copyaspath.feature_1.0.3.qualifier.jar" id="ch.netcetera.eclipse.copyaspath.feature" version="1.0.3.qualifier"/>
 </site>
