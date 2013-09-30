@@ -2,7 +2,7 @@
 <feature
       id="ch.netcetera.eclipse.copyaspath.feature"
       label="Copy As Path Feature"
-      version="1.0.2.qualifier"
+      version="1.0.2"
       provider-name="%bundle.provider"
       plugin="ch.netcetera.eclipse.copyaspath.plugin">
 
