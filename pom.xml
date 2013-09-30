@@ -40,6 +40,22 @@
       <url>http://download.eclipse.org/releases/kepler</url>
     </repository>
   </repositories>
+  <distributionManagement>
+    <!-- The distribution URLs should be defined in the properties of 
+         the maven installation's settings.xml -->
+    <repository>
+      <id>nexus</id>
+      <name>nexus</name>
+      <url>${distribution.release.url}</url>
+      <uniqueVersion>false</uniqueVersion>
+    </repository>
+    <snapshotRepository>
+      <id>nexus</id>
+      <name>nexus</name>
+      <url>${distribution.snapshot.url}</url>
+      <uniqueVersion>false</uniqueVersion>
+    </snapshotRepository>
+  </distributionManagement>
   <build>
     <plugins>
       <plugin>
