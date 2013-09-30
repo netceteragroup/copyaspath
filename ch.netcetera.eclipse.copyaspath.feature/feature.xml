@@ -3,7 +3,7 @@
       id="ch.netcetera.eclipse.copyaspath.feature"
       label="Copy As Path Feature"
       version="1.0.3.qualifier"
-      provider-name="%bundle.provider"
+      provider-name="Netcetera"
       plugin="ch.netcetera.eclipse.copyaspath.plugin">
 
    <description>

@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: %bundle.name
+Bundle-Name: Copy As Path Plugin
 Bundle-SymbolicName: ch.netcetera.eclipse.copyaspath.plugin;singleton:=true
 Bundle-Version: 1.0.3.qualifier
 Bundle-Activator: ch.netcetera.eclipse.copyaspath.Activator
-Bundle-Vendor: %bundle.provider
+Bundle-Vendor: Netcetera
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.core.resources;bundle-version="3.8.100",
