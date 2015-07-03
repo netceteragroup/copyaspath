@@ -140,7 +140,6 @@
     </pluginManagement>
   </build>
   <properties>
-    <nca.project.id>nca-302-0</nca.project.id>
     <tycho-version>0.14.1</tycho-version>
     <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
     <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
