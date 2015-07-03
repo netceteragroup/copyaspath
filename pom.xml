@@ -14,6 +14,7 @@
     <module>ch.netcetera.eclipse.copyaspath.plugin</module>
     <module>ch.netcetera.eclipse.copyaspath.feature</module>
     <module>ch.netcetera.eclipse.copyaspath.updatesite</module>
+    <module>ch.netcetera.eclipse.copyaspath.manual</module>
   </modules>
   <developers>
     <developer>
@@ -140,11 +141,12 @@
     </pluginManagement>
   </build>
   <properties>
-    <tycho-version>0.14.1</tycho-version>
+    <tycho-version>0.21.0</tycho-version>
     <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
     <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
     <source.version>1.7</source.version>
     <target.version>1.7</target.version>
+    <maven-scm-publish-plugin.version>1.1</maven-scm-publish-plugin.version>
   </properties>
   <description>A clean room implementation of the copy as path plugin</description>
 </project>
