@@ -34,26 +34,14 @@ public class Activator extends AbstractUIPlugin {
   public Activator() {
   }
 
-  /*
-   * (non-Javadoc)
-   * @see org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext)
-   */
   @Override
-  // CHECKSTYLE:OFF : exception is thrown by super() call.
   public void start(BundleContext context) throws Exception {
-  // CHECKSTYLE:ON
     super.start(context);
     plugin = this;
   }
 
-  /*
-   * (non-Javadoc)
-   * @see org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.BundleContext)
-   */
   @Override
-  // CHECKSTYLE:OFF : exception is thrown by super() call.
   public void stop(BundleContext context) throws Exception {
-    // CHECKSTYLE:ON
     plugin = null;
     super.stop(context);
   }
