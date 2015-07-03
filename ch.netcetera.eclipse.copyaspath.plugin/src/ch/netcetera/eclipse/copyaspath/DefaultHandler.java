@@ -33,7 +33,7 @@ public class DefaultHandler extends AbstractHandler {
 
   @Override
   public Object execute(ExecutionEvent event) throws ExecutionException {
-    IResource res = null;
+    IResource resource = null;
     ISelection currentSelection = HandlerUtil.getCurrentSelection(event);
     Object firstElement = null;
     if (currentSelection instanceof IStructuredSelection) {
@@ -41,20 +41,20 @@ public class DefaultHandler extends AbstractHandler {
       firstElement = ssel.getFirstElement();
     }
     if (firstElement instanceof IAdaptable) {
-      res = ((IAdaptable) firstElement).getAdapter(IResource.class);
+      resource = ((IAdaptable) firstElement).getAdapter(IResource.class);
     }
 
-    if (res == null) {
+    if (resource == null) {
       IEditorInput activeEditorInput = HandlerUtil.getActiveEditorInput(event);
       if (activeEditorInput != null) {
-        res = activeEditorInput.getAdapter(IResource.class);
+        resource = activeEditorInput.getAdapter(IResource.class);
       }
     }
 
     String path = null;
 
-    if (res != null) {
-      path = res.getLocation().toOSString();
+    if (resource != null) {
+      path = resource.getLocation().toOSString();
     } else if (firstElement instanceof IJavaElement) {
       path = ((IJavaElement) firstElement).getPath().toOSString();
     }
