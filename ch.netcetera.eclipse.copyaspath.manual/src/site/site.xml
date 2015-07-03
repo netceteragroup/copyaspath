@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<project name="Copy As Path Eclipse Plugin">
+
+  <skin>
+    <groupId>org.apache.maven.skins</groupId>
+    <artifactId>maven-fluido-skin</artifactId>
+    <version>1.3.1</version>
+  </skin>
+  
+  <custom>
+    <fluidoSkin>
+      <gitHub>
+        <projectId>netceteragroup/copyaspath</projectId>
+        <ribbonOrientation>right</ribbonOrientation>
+        <ribbonColor>darkblue</ribbonColor>
+      </gitHub>
+      <sourceLineNumbersEnabled>true</sourceLineNumbersEnabled>
+      <profile>production</profile>
+    </fluidoSkin>
+  </custom>
+
+</project>
