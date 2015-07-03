@@ -41,13 +41,14 @@ public class DefaultHandler extends AbstractHandler {
       firstElement = ssel.getFirstElement();
     }
     if (firstElement instanceof IAdaptable) {
-      resource = ((IAdaptable) firstElement).getAdapter(IResource.class);
+      IAdaptable adaptableFirstElement = (IAdaptable) firstElement;
+      resource = (IResource) adaptableFirstElement.getAdapter(IResource.class);
     }
 
     if (resource == null) {
       IEditorInput activeEditorInput = HandlerUtil.getActiveEditorInput(event);
       if (activeEditorInput != null) {
-        resource = activeEditorInput.getAdapter(IResource.class);
+        resource = (IResource) activeEditorInput.getAdapter(IResource.class);
       }
     }
 
