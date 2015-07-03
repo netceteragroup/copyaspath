@@ -35,19 +35,19 @@ public class DefaultHandler extends AbstractHandler {
   public Object execute(ExecutionEvent event) throws ExecutionException {
     IResource res = null;
     ISelection currentSelection = HandlerUtil.getCurrentSelection(event);
-    IAdaptable firstElement = null;
+    Object firstElement = null;
     if (currentSelection instanceof IStructuredSelection) {
       IStructuredSelection ssel = (IStructuredSelection) currentSelection;
-      firstElement = (IAdaptable) ssel.getFirstElement();
+      firstElement = ssel.getFirstElement();
     }
-    if (firstElement != null) {
-      res = (IResource) firstElement.getAdapter(IResource.class);
+    if (firstElement instanceof IAdaptable) {
+      res = ((IAdaptable) firstElement).getAdapter(IResource.class);
     }
 
     if (res == null) {
       IEditorInput activeEditorInput = HandlerUtil.getActiveEditorInput(event);
       if (activeEditorInput != null) {
-        res = (IResource) activeEditorInput.getAdapter(IResource.class);
+        res = activeEditorInput.getAdapter(IResource.class);
       }
     }
 
@@ -59,8 +59,11 @@ public class DefaultHandler extends AbstractHandler {
       path = ((IJavaElement) firstElement).getPath().toOSString();
     }
     Clipboard clipboard = new Clipboard(HandlerUtil.getActiveShell(event).getDisplay());
-    clipboard.setContents(new Object[]{path}, new Transfer[]{TextTransfer.getInstance()});
-    clipboard.dispose();
+    try {
+      clipboard.setContents(new Object[]{path}, new Transfer[]{TextTransfer.getInstance()});
+    } finally {
+      clipboard.dispose();
+    }
     return null;
   }
 }
